@@ -1,15 +1,9 @@
-provider "aws"
-{
-  region = "us-east-1"
+provider "aws" {
+    region = "us-east-1"
 }
 
-resource "aws_instance" "demo" {
+resource "aws_instance" "myec2" {
+  ami           = "ami-00a929b66ed6e0de6"
+  instance_type = "t2.micro"
 
-    ami           = "ami-0f88e80871fd81e91" # Replace with a valid AMI ID
-    instance_type = "t2.micro"
-    
-    tags = {
-        Name = "DemoInstance"
-    }  
 }
-
